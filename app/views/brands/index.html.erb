@@ -1,7 +1,7 @@
 <h1>Brands<h1>
 
 <% @brands.each do |brand| %>
-	<%= brand.name %>
+	<li><%= brand.name %><li/>
 <% end %>
 
 <form action ="brands/new" method ="get">
