@@ -18,5 +18,22 @@ class BrandsController < ApplicationController
 		end
 	end
 
+	def show
+		@brand = Brand.find(params[:id])
+	end
+
+	def edit
+		@brand = Brand.find(params[:id])
+	end
+
+	def update
+		@brand = Brand.find(params[:id])
+		if @brand.update(params[:update_brand])
+      redirect_to("/brands/#{@brand.id}")
+    else
+      render("brands/edit.html.erb")
+    end
+	end
+
 
 end
