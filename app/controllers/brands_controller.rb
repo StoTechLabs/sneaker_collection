@@ -35,5 +35,16 @@ class BrandsController < ApplicationController
     end
 	end
 
+	def delete
+    @brand = Brand.find(params[:id])
+  end
+
+  def destroy
+  	@brand = Brand.find(params[:id])
+  	@brand.destroy
+  	@brands = Brand.all
+  	render('brands/index.html.erb')
+  end
+
 
 end
