@@ -1,0 +1,18 @@
+<h1>New Shoe</h1>
+
+<% if @shoe.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @shoe.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/shoes" method="post">
+  <label for="shoe_style">New Shoe Name</label>
+  <input id="shoe_style" name="new_shoe[style]" type="text" >
+  <label for="shoe_color">New Shoe Color</label>
+  <input id="shoe_color" name="new_shoe[color]" type="text" >
+  <button>Add Shoe</button>
+</form>
