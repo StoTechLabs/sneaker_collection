@@ -10,7 +10,6 @@
 <% end %>
 
 <form action="/brands" method="post">
-  <label for="brand_name">New Brand Name</label>
-  <input id="brand_name" name="new_brand[name]" type="text" value="<%= @brand.name %>">
+  <%= render('form') %>
   <button>Add Brand</button>
 </form>

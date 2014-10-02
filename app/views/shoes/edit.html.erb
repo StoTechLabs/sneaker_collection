@@ -1,20 +1,10 @@
 <h1>Style: <%= @shoe.style%></h1>
 <h1>Color: <%= @shoe.color%></h1>
 
-<% if @shoe.errors.any? %>
-  <h3>Please fix these errors:</h3>
-  <ul>
-    <% @shoe.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render('layouts/errors', :object => @shoe) %>
 
 <form action"/shoes/<%= @shoe.id %>" method="post">
-  <input name="_method" type="hidden" value="patch">
-  <label for="shoe_style">Edit Shoe Style</label>
-  <input id="shoe_style" name="update_shoe[style]" type="text" value="<%= @shoe.style %>" >
-  <label for="shoe_color">Edit Shoe Color</label>
-  <input id="shoe_color" name="update_shoe[color]" type="text" value="<%= @shoe.color %>" >
+<input name="_method" type="hidden" value="patch">
+  <%= render('form') %>
   <button>update Shoe</button>
 </form>

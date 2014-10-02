@@ -1,4 +1,4 @@
-<h1>New Shoe</h1>
+<div class= 'container-fluid'><h1>New Shoe</h1>
 
 <% if @shoe.errors.any? %>
   <h3>Please fix these errors:</h3>
@@ -10,9 +10,15 @@
 <% end %>
 
 <form action="/shoes" method="post">
-  <label for="shoe_style">New Shoe Name</label>
-  <input id="shoe_style" name="new_shoe[style]" type="text" >
-  <label for="shoe_color">New Shoe Color</label>
-  <input id="shoe_color" name="new_shoe[color]" type="text" >
+ <%= render('form') %>
   <button>Add Shoe</button>
+
+ <div >Select Brand:</div>
+ <select name="new_shoe[brand_id]">
+    <% @brands.each do |brand| %>
+     <option value="<%= brand.id %>" ><%= brand.name %></option>
+    <% end %>
+  </select>
+
 </form>
+</div>

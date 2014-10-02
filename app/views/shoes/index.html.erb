@@ -1,9 +1,10 @@
-<h1>Shoes<h1>
+<div class ='container-fluid'><h1>Shoes<h1>
 
 <% @shoes.each do |shoe| %>
 	<li><a href="/shoes/<%=shoe.id%>"><%= shoe.style %>: <%= shoe.color %></a><li/>
 <% end %>
 
 <form action ="shoes/new" method ="get">
-	<button>Add New Shoe</button>
+	<button class ="btn btn default">Add New Shoe</button>
 </form>
+</div>

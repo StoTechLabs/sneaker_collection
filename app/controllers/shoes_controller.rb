@@ -6,12 +6,13 @@ class ShoesController < ApplicationController
 
 	def new 
 		@shoe = Shoe.new
+		@brands = Brand.all
 	end
 
 	def create
 		@shoe = Shoe.new(params[:new_shoe])
 		if @shoe.save
-			flash[:notice] = "shoe Added"
+			flash[:notice] = "Shoe Added!!!"
 			redirect_to('/shoes')
 		else
 			render('shoes/new.html.erb')
@@ -28,7 +29,7 @@ class ShoesController < ApplicationController
 
 	def update
 		@shoe = Shoe.find(params[:id])
-		if @shoe.update(params[:update_shoe])
+		if @shoe.update(params[:new_shoe])
       redirect_to("/shoes/#{@shoe.id}")
     else
       render("shoes/edit.html.erb")
