@@ -6,7 +6,7 @@ Sneaker Collection
 ####Joshua Storey
 
 
-![Alt text](https://github.com/StoTech21/Sports-League-Manager/blob/master/sql%20design%20SLM.png)
+![Alt text](https://github.com/StoTechLabs/sneaker_collection/blob/master/Screen%20Shot%202014-09-27%20at%2011.10.10%20AM.png)
 
 ###About:
 This will allow a user to create and organize a shoe collection.
